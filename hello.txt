@@ -67,10 +67,3 @@ This is our final project.
 <<<<<<< HEAD
 =======
 
-
->>>>>>> 4897ff749d8fad689f417fd96b6feb59cfafac41
-
-
-
-17:43
->>>>>>> 4897ff749d8fad689f417fd96b6feb59cfafac41
