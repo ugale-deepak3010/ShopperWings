@@ -25,7 +25,7 @@ button {
         margin: 8px 0;  
         padding: 12px 20px;   
         display: inline-block;   
-        border: 2px solid light green;   
+        border: 2px solid light pink;   
         box-sizing: border-box;   
     }  
  button:hover {   
