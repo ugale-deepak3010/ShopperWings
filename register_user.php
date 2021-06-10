@@ -86,36 +86,21 @@ body {
 
     <div class="form-floating">
 <br>
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" autocomplete="true" placeholder="name@example.com">
     </div>
     <div class="form-floating">
-<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Once Password">
+    </div>
+
+        <div class="form-floating">
+<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat Password">
     </div>
 
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
   </form>
 
 
-      <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-
-    </div>
-    <div class="checkbox mb-3">
-      <label>
-       <a href="register_user.php">I Don't Have Account</a>
-      </label>
-          <center>OR</center>
-
-    </div>
-    <div class="checkbox mb-3">
-      <label>
-       <a href="register_shopper.php">I am Shopper</a>
-      </label>
-      
-    </div>
 
 
 </main>
