@@ -74,8 +74,6 @@ body {
     </style>
 
     
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
@@ -85,15 +83,35 @@ body {
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
     <div class="form-floating">
-<br>
-      <input type="email" class="form-control" id="floatingInput" autocomplete="true" placeholder="name@example.com">
-    </div>
-    <div class="form-floating">
-<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Once Password">
+      <br>
+      <input type="text" class="form-control" id="floatingInput" autocomplete="true" placeholder="First Name">
     </div>
 
-        <div class="form-floating">
-<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat Password">
+    <div class="form-floating">
+      <br>
+      <input type="text" class="form-control" id="floatingInput" autocomplete="true" placeholder="Last Name">
+    </div>
+
+
+    <div class="form-floating">
+      <br>      
+      <input type="number" class="form-control" id="floatingPassword" placeholder="e.g. 8975754343">
+    </div>
+
+    <div class="form-floating">
+      <br>
+      <input type="email" class="form-control" id="floatingInput" autocomplete="true" placeholder="e.g. name@example.com">
+    </div>
+
+
+    <div class="form-floating">
+      <br>
+      <input type="password" class="form-control" id="floatingInput" autocomplete="true" placeholder="Once Password">
+    </div>
+
+    <div class="form-floating">
+          <br>      
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat Password">
     </div>
 
 
