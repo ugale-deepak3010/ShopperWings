@@ -10,7 +10,6 @@
 
     
 
-    <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -44,6 +43,24 @@ body {
   z-index: 2;
 }
 
+
+
+.form-signin input[type="fname"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="lname"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -55,6 +72,9 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+
 
 
 
@@ -191,46 +211,43 @@ body {
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
     <div class="form-floating">
-      <br>
-      <input type="text" class="form-control" required="" id="floatingInput" autocomplete="true" placeholder="First Name">
+      <input type="text" class="form-control" required="" id="fname" autocomplete="true" placeholder="First Name">
+      <label for="fname">First Name</label>
     </div>
 
     <div class="form-floating">
-      <br>
-      <input type="text" class="form-control" required="" id="floatingInput" autocomplete="true" placeholder="Last Name">
+      <input type="text" class="form-control" required="" id="lname" autocomplete="true" placeholder="Last Name">
+      <label for="lname">Last Name</label>
     </div>
-
-
+ 
+<br>
     <div class="form-floating">
-      <br>      
-      <input type="number" class="form-control" required="" id="floatingPassword" placeholder="e.g. 8975754343">
-    </div>
-
-    <div class="form-floating">
-      <br>
-      <input type="email" class="form-control" id="floatingInput" required="" autocomplete="true" placeholder="e.g. name@example.com">
-    </div>
-
-
-    <div class="form-floating">
-      <br>
-      <input type="password" required="" class="form-control" id="floatingInput" autocomplete="true" placeholder="Once Password">
+      <input type="number" class="form-control" required="" id="phone" placeholder="e.g. 8975754343">
+      <label for="phone">Mo. No.</label>
     </div>
 
     <div class="form-floating">
-          <br>      
-          <input type="password" class="form-control" id="floatingPassword" required="" placeholder="Repeat Password">
+      <input type="email" class="form-control" id="email" required="" autocomplete="true" placeholder="e.g. name@example.com">
+      <label for="email">Email</label>
+    </div>
+<br>
+
+    <div class="form-floating">
+      <input type="password" required="" class="form-control" id="pass1" autocomplete="true" placeholder="Once Password">
+      <label for="pass1">Once Password</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="password" class="form-control" id="pass2" required="" placeholder="Repeat Password">
+        <label for="pass2">Repeat Password</label>
     </div>
 
     <div class="form-floating">
         <input class="form-check-input" type="checkbox" value="" required="" id="flexCheckDefault">
-       <label class="form-check-label" for="flexCheckDefault">Accept Terms & Services
-      </label>
-             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Read</button>
-
     </div>
-
-    <br>
+     Accept Terms & Services <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Read</a>
+     <br>
+     <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
   </form>
 
