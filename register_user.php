@@ -261,7 +261,10 @@ body {
      <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
   </form>
-
+  <br>
+  OR
+  <br>
+<button class="btn btn-warning" onclick="location.href='login.php'">Login</button>
 
 
 

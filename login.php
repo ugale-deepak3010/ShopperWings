@@ -85,11 +85,12 @@ body {
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
     <div class="form-floating">
-<br>
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="email" autocomplete="off" placeholder="name@example.com">
+      <label for="email">Email</label>
     </div>
     <div class="form-floating">
-<br>      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="Password" placeholder="Password">
+          <label for="Password">Password</label>
     </div>
 
 
