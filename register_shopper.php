@@ -6,10 +6,10 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>Login</title>
+    <title>New Register Shopper</title>
 
     
-
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -57,17 +57,8 @@ body {
 }
 
 
-.form-signin input[id="shop_icon"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
 
-.form-signin input[id="shop_banner"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+
 
 
 .form-signin input[id="fname"] {
@@ -143,7 +134,7 @@ body {
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ShopperWings Privacy & Policies</h5>
       </div>
       <div class="modal-body">
         <h1>Privacy Policy for ShopperWings</h1>
@@ -230,7 +221,7 @@ body {
 <p>ShopperWings does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Accept</button>
       </div>
     </div>
   </div>
@@ -242,10 +233,15 @@ body {
 
 
 <main class="form-signin">
-  <form>
+  <form id="ShopperRegistration" onsubmit="return shopperRegister()" >
     <img class="mb-4" src="img/logo.jpg" alt="" width="72">
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
+      <div class="form-floating">
+      <input type="file" class="form-control"  accept="image/jpeg, image/png" required="" id="shop_icon" autocomplete="true" placeholder="First Name">
+      <label for="fname"> Shop Image</label>
+    </div>
+<br>
 
     <div class="form-floating">
       <input type="text" class="form-control" required="" id="shop" autocomplete="true" placeholder="First Name">
@@ -258,16 +254,6 @@ body {
     </div>
 <br>
 
-      <div class="form-floating">
-      <input type="file" class="form-control" required="" id="shop_icon" autocomplete="true" placeholder="First Name">
-      <label for="fname"> Shop Icon</label>
-    </div>
-
-    <div class="form-floating">
-      <input type="file" class="form-control" required="" id="shop_banner" autocomplete="true" placeholder="First Name">
-      <label for="fname">Shop Banner</label>
-    </div>
-<br>
 
     <div class="form-floating">
       <input type="text" class="form-control" required="" id="fname" autocomplete="true" placeholder="First Name">
@@ -307,7 +293,27 @@ body {
      Accept Terms & Services <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Read</a>
      <br>
      <br>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
+     <div id="percent_show" style="display: none;">
+        <input type="range" class="form-range" value="0" id="upload_img_percentage" disabled>
+      </div>
+
+    <button class="w-100 btn btn-lg btn-primary" id="sub_btn" type="submit">Create My Account</button>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+</svg>
+
+<div id="succ_msg" style="display: none !important;" class="alert alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+   Successfully Account is created <br>
+   Please Login
+  </div>
+</div>
+
+
   </form>
   <br>
   OR
@@ -317,9 +323,139 @@ body {
 
 
 </main>
-
+<script type="text/javascript" src="js/jquery.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
+
+
+
+function shopperRegister() {
+  console.log("shopperRegister called");
+
+
+
+if ( document.getElementById('pass1').value !=document.getElementById('pass2').value){
+  alert("Password Not Matching");
+  return false;
+}else{
+  //alert("match")
+}
+
+
+  if(document.querySelector('#shop_icon').files.length == 0) {
+    alert('Error : No file selected');
+    return false;
+  }
+
+  // first file that was chosen
+  let file = document.querySelector('#shop_icon').files[0];
+
+  // allowed types
+  let allowed_mime_types = [ 'image/jpeg', 'image/png' ];
+  
+  // allowed max size in MB
+  let allowed_size_mb = 10;
+  
+  // validate file type
+  if(allowed_mime_types.indexOf(file.type) == -1) {
+    alert('Error : Incorrect file type');
+    return false;
+  }
+
+  // validate file size
+  if(file.size > allowed_size_mb*1024*1024) {
+    alert('Error : Exceeded size');
+    return false;
+  }
+
+
+
+
+
+
+
+let data = new FormData();
+// file selected by the user
+// in case of multiple files append each of them
+try{
+
+data.append('file', document.querySelector('#shop_icon').files[0]);
+
+
+data.append('shop', document.getElementById('shop').value);
+data.append('address', document.getElementById('address').value);
+
+data.append('fname', document.getElementById('fname').value);
+data.append('lname', document.getElementById('lname').value);
+
+data.append('phone', document.getElementById('phone').value);
+data.append('email', document.getElementById('email').value);
+
+data.append('password', document.getElementById('pass2').value);
+}catch(e){
+  alert(e);
+  console.log(e);
+  return false;
+}
+
+
+
+
+
+let request = new XMLHttpRequest();
+request.open('POST', 'php/shopper_register.php'); 
+
+document.getElementById('percent_show').style.display="flex";
+// upload progress event
+request.upload.addEventListener('progress', function(e) {
+
+  let percent_complete = (e.loaded / e.total)*100;
+  
+  // percentage of upload completed
+document.getElementById('upload_img_percentage').value=percent_complete;
+
+  //
+
+
+  console.log(percent_complete);
+});
+
+// AJAX request finished event
+request.addEventListener('load', function(e) {
+  // HTTP status message
+  console.log(request.status);
+
+  // request.response will hold the response from the server
+  console.log(request.response);
+
+//percent_show
+document.getElementById('percent_show').style.display="none";
+document.getElementById('sub_btn').style.display="none";
+document.getElementById('succ_msg').style.display="flex";
+
+});
+
+// send POST request to server side script
+request.send(data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return false;
+}
+
+
   
 //  MODAL FOR TERMS AND PRICVACE
 
@@ -329,6 +465,8 @@ var myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', function () {
   myInput.focus()
 })
+
+
 
 
 
