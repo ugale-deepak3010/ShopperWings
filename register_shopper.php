@@ -134,7 +134,7 @@ body {
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">ShopperWings Privacy & Policies</h5>
+        <h5 class="modal-title" id="exampleModalLabel">ShopperWings Terms & Services</h5>
       </div>
       <div class="modal-body">
         <h1>Privacy Policy for ShopperWings</h1>
