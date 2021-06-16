@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.83.1">
-    <title>Login</title>
+    <title>Registration</title>
 
     
 
@@ -217,7 +217,7 @@ body {
 
 
 <main class="form-signin">
-  <form>
+  <form onsubmit="return register_user()">
     <img class="mb-4" src="img/logo.jpg" alt="" width="72">
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
@@ -259,7 +259,22 @@ body {
      Accept Terms & Services <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Read</a>
      <br>
      <br>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
+    <button id="sub_btn" class="w-100 btn btn-lg btn-primary" type="submit">Create My Account</button>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+</svg>
+
+<div id="succ_msg" style="display: none !important;" class="alert alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+   Successfully Account is created <br>
+   Please Login
+  </div>
+</div>
+
+
   </form>
   <br>
   OR
@@ -269,10 +284,63 @@ body {
 
 
 </main>
-
+<script type="text/javascript" src="js/ajax_d.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
   
+
+
+
+function register_user() {
+  if ( document.getElementById('pass1').value != document.getElementById('pass2').value ){
+    alert("Password Not matched");
+    return false;
+  }
+
+ var fname=document.getElementById('fname').value;
+ var lname=document.getElementById('lname').value;
+ var phone=document.getElementById('phone').value;
+ var email=document.getElementById('email').value;
+
+ var password=document.getElementById('pass2').value;
+
+   regObj={ 
+    fname:fname,
+    lname:lname,
+    phone:phone,
+    email:email,
+    password:password
+  }
+
+var regOb_=JSON.stringify(regObj);
+
+ip("register_user", regOb_, register_callbacking, "php/register_user.php")
+
+
+
+ alert("suuccess")
+
+ return false;
+
+}
+
+
+  function register_callbacking(par) {
+    console.log("-----"+par);
+
+    if (par=="5656"){
+      document.getElementById('sub_btn').style.display="none";
+      document.getElementById('succ_msg').style.display="flex";
+    }
+  }
+
+
+
+
+
+
+
+
 //  MODAL FOR TERMS AND PRICVACE
 
   var myModal = document.getElementById('myModal')
