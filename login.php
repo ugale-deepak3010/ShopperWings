@@ -44,7 +44,7 @@ body {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-signin input[type="number"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -73,20 +73,17 @@ body {
       }
     </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
+      </head>
   <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <form method="post" onsubmit="return login_me()">
     <img class="mb-4" src="img/logo.jpg" alt="" width="72">
     <h1 class="h3 mb-3 fw-normal"> ShopperWings</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="email" autocomplete="off" placeholder="name@example.com">
-      <label for="email">Email</label>
+      <input type="number" class="form-control" id="phone" autocomplete="off" placeholder="name@example.com">
+      <label for="phone">Mobile No.</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" id="Password" placeholder="Password">
@@ -122,6 +119,43 @@ body {
 </main>
 
 
+<script type="text/javascript" src="js/ajax_d.js"></script>
+<script type="text/javascript">
+
+
+  function login_me() {
+    console.log("Loginme called");
+
+  var phone=document.getElementById('phone').value;
+ var password=document.getElementById('Password').value;
+
+   login_obj={ 
+    phone:phone,
+    password:password
+  }
+
+var login_cred=JSON.stringify(login_obj);
+
+
+
+    ip("login",login_cred,login_callback,"php/action_login.php")
+    return false;
+  }
+
+  function login_callback(par) {
+    console.log("clbk ="+par);
+
+
+    if (par=="8989"){
+      alert("Wrong password & Mobile No.");
+    }else if(par == "7575"){
+
+    }
+
+
+
     
+  }
+</script>    
   </body>
 </html>
